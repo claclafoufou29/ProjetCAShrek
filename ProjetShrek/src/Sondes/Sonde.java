@@ -18,6 +18,7 @@ public class Sonde {
 	private ArrayList<Sondage> sondages;
 	
 	public Sonde(String nom,String prenom, int age, Categorie categorie, String mail ){
+		System.out.println("bonjour alexis");
 		num++;
 		this.id = num;
 		this.nom=nom;
