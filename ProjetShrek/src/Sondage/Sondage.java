@@ -2,7 +2,7 @@ package Sondage;
 import java.sql.Date;
 import java.util.ArrayList;
 
-import Utilisateurs.Sonde;
+import Sondes.Sonde;
 
 public class Sondage {
 

@@ -2,7 +2,7 @@ package Sondage;
 
 import java.util.Date;
 
-import Utilisateurs.Sonde;
+import Sondes.Sonde;
 
 /**
 @author Groupe Shrek

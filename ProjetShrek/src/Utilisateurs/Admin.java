@@ -1,11 +1,15 @@
 package Utilisateurs;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import Sondes.Sonde;
 
 public class Admin {
 	public static int num = 0;
 	private int id;
 	private String email;
 	private String mdp;
+	private ArrayList<Sondeur> listSondeur;
 	
 	{
 		num++;
@@ -15,6 +19,7 @@ public class Admin {
 		setEmail(email);
 		setMdp(mdp);
 		setId(num);
+		this.listSondeur = new ArrayList<Sondeur>();
 	}
 	
 	/** Cree un sondeur **/
@@ -71,5 +76,13 @@ public class Admin {
 
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+
+	public ArrayList<Sondeur> getListSondeur() {
+		return listSondeur;
+	}
+
+	public void setListSondeur(ArrayList<Sondeur> listSondeur) {
+		this.listSondeur = listSondeur;
 	}
 }
