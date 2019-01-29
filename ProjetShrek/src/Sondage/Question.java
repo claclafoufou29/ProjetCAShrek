@@ -13,7 +13,7 @@ public class Question {
 	* 	- num s'indent et permetl'auto-incrémentation de l'id 
 	* 	- intitule comporte l'intitule de la question
 	* 	- reponseList possède la liste des réponses presentent dans une question
-	**/
+	*/
 	
 	public Question(String intitule) {
 		num++;
