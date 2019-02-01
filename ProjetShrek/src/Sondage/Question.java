@@ -15,6 +15,7 @@ public class Question {
 	* 	- reponseList possède la liste des réponses presentent dans une question
 	*/
 	//test commit mdr
+	//prout
 	public Question(String intitule) {
 		num++;
 		this.id = num;
