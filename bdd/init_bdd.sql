@@ -3,7 +3,7 @@ CREATE TABLE res_resultat_t(
     res_date_rep DATE,
     rep_reponse_id INT(4),
     snd_sonde_id INT(4),
-    PRIMARY KEY (res_resultaid)
+    PRIMARY KEY (res_resultat_id)
 );
 
 CREATE TABLE rep_reponse_t(
@@ -17,8 +17,9 @@ CREATE TABLE que_quest_t(
     que_quest_id INT(4) AUTO_INCREMENT,
     que_intitule VARCHAR(250),
     que_type TINYINT(1),
+    que_ordre INT(4),
     sdg_sondage_id INT(4),
-    PRIMARY KEY (que_quesid)
+    PRIMARY KEY (que_quest_id)
 );
 
 CREATE TABLE snd_sonde_t(
@@ -48,7 +49,7 @@ CREATE TABLE sdg_sondage_t(
 CREATE TABLE par_participant_t(
     sdg_sondage_id INT(4) NOT NULL,
     snd_sonde_id INT(4) NOT NULL,
-    CONSTRAINT PRIMARY PRIMARY KEY (sdg_sondage_id,snd_sonde_id)
+    CONSTRAINT PK_par_participant_t PRIMARY KEY (sdg_sondage_id,snd_sonde_id)
 );
 
 CREATE TABLE cat_categorie_t(
@@ -56,6 +57,7 @@ CREATE TABLE cat_categorie_t(
     cat_intitule VARCHAR(250),
     cat_description VARCHAR(750),
     sdr_sondeur_id INT(4),
+    sdg_sondage_id INT(4),
     PRIMARY KEY (cat_categorie_id)
 );
 
