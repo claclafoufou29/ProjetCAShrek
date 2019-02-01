@@ -43,6 +43,7 @@ CREATE TABLE sdg_sondage_t(
     sdg_dateDebut DATE,
     sdg_dateFin DATE,
     sdr_sondeur_id INT(4),
+    cat_categorie_id INT(4),
     PRIMARY KEY (sdg_sondage_id)
 );
 
@@ -57,7 +58,6 @@ CREATE TABLE cat_categorie_t(
     cat_intitule VARCHAR(250),
     cat_description VARCHAR(750),
     sdr_sondeur_id INT(4),
-    sdg_sondage_id INT(4),
     PRIMARY KEY (cat_categorie_id)
 );
 
@@ -88,6 +88,8 @@ ALTER TABLE snd_sonde_t ADD CONSTRAINT FK_snd_cat FOREIGN KEY (cat_categorie_id)
 ALTER TABLE snd_sonde_t ADD CONSTRAINT FK_snd_adm FOREIGN KEY (adm_admin_id) REFERENCES adm_admin_t(adm_admin_id);
 ALTER TABLE sdg_sondage_t ADD CONSTRAINT FK_sdg_sdr FOREIGN KEY (sdr_sondeur_id) REFERENCES sdr_sondeur_t(sdr_sondeur_id);
 ALTER TABLE par_participant_t ADD CONSTRAINT FK_par_sdg FOREIGN KEY (sdg_sondage_id) REFERENCES sdg_sondage_t(sdg_sondage_id);
+ALTER TABLE sdg_sondage_t ADD CONSTRAINT FK_sdg_sdr FOREIGN KEY (sdr_sondeur_id) REFERENCES sdr_sondeur_t(sdr_sondeur_id);
+ALTER TABLE sdg_sondage_t ADD CONSTRAINT FK_sdg_cat FOREIGN KEY (cat_categorie_id) REFERENCES cat_categorie_t(cat_categorie_id);
 ALTER TABLE par_participant_t ADD CONSTRAINT FK_par_snd FOREIGN KEY (snd_sonde_id) REFERENCES snd_sonde_t(snd_sonde_id);
 ALTER TABLE cat_categorie_t ADD CONSTRAINT FK_cat_sdr FOREIGN KEY (sdr_sondeur_id) REFERENCES sdr_sondeur_t(sdr_sondeur_id);
 ALTER TABLE sdr_sondeur_t ADD CONSTRAINT FK_sdr_adm FOREIGN KEY (adm_admin_id) REFERENCES adm_admin_t(adm_admin_id);
