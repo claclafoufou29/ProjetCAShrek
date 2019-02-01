@@ -8,8 +8,6 @@ import Sondage.Sondage;
 **/
 public class Sonde {
 
-	static int num = 0;
-	private int id;
 	private String nom;
 	private String prenom;
 	private int age;
@@ -18,19 +16,12 @@ public class Sonde {
 	private ArrayList<Sondage> sondages;
 	
 	public Sonde(String nom,String prenom, int age, Categorie categorie, String mail ){
-		System.out.println("bonjour alexis");
-		num++;
-		this.id = num;
 		this.nom=nom;
 		this.prenom=prenom;
 		this.age=age;
 		this.categorie=categorie;
 		this.mail=mail;
 		this.sondages = new ArrayList<Sondage>();
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getNom() {

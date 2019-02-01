@@ -3,15 +3,11 @@ package Sondes;
 import java.util.ArrayList;
 
 public class ListSondes {
-	//eqsfsfsrfg
-	//qsdqws
+	
+	private ArrayList<Sonde> listSondes;
 	
 	public ListSondes() {
 		this.setListSondes(new ArrayList<Sonde>());
-	}
-	
-	public boolean existSonde(String nom, String prenom) {
-		
 	}
 
 	public ArrayList<Sonde> getListSondes() {
