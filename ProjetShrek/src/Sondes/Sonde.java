@@ -8,6 +8,8 @@ import Sondage.Sondage;
 **/
 public class Sonde {
 
+	static int num = 0;
+	private int id;
 	private String nom;
 	private String prenom;
 	private int age;
@@ -16,6 +18,8 @@ public class Sonde {
 	private ArrayList<Sondage> sondages;
 	
 	public Sonde(String nom,String prenom, int age, Categorie categorie, String mail ){
+		num ++;
+		this.setId(num);
 		this.nom=nom;
 		this.prenom=prenom;
 		this.age=age;
@@ -52,15 +56,8 @@ public class Sonde {
 		return categorie;
 	}
 	
-	/**
-	 * @param categorie
-	 * Vérifie si la catégorie donnée en argument n'est pas déjà la catégorie du Sondé. 
-	 * Si ce n'est pas le cas, elle la met à jour.
-	 */
 	public void setCategorie(Categorie categorie) {
-		if(!this.categorie.equals(categorie)){
-			this.categorie = categorie;
-		}
+		this.categorie = categorie;
 	}
 
 	public String getMail() {
@@ -70,42 +67,44 @@ public class Sonde {
 	/**
 	 * 
 	 * @param mail
-	 * @return resultat de l'opération
-	 * Vérifie si l'adresse mail est valide (contient un '@' et un'.').
+	 * @return resultat de l'op�ration
+	 * V�rifie si l'adresse mail est valide (contient un '@' et un'.').
 	 * La met à jour si elle est valide.
 	 * Retourne -1 si elle n'a pas pu être mise à jour.
 	 */
-	public int setMail(String mail) {
-		int res;
+	public boolean setMail(String mail) {
+		boolean res;
 		if(mail.contains("@") && mail.contains(".")){
 			this.mail = mail;
-			res = 0;
+			res = true;
 		} else {
-			res = -1;
+			res = false;
 		}
 		return res;
 	}
 	
-	/**
-	 * @param Sondage "sond"
-	 * Vérifie si le sondage fourni en argument ne fait pas déjà partie de le liste des sondages du sondé.
-	 * Si ce n'est pas le cas, ajout du sondage à la liste.
-	 */
 	public void addSondage(Sondage sond){
-		if(!this.sondages.contains(sond)){
-			this.sondages.add(sond);
-		}
+		this.sondages.add(sond);
 	}
 	
-	/**
-	 * @param Sondage "sond"
-	 * Vérifie que le sondage soit dans la liste du sondé.
-	 * Si c'est le cas, suppression du sondage de la liste.
-	 */
+	public ArrayList<Sondage> getSondages() {
+		return sondages;
+	}
+
+	public void setSondages(ArrayList<Sondage> sondages) {
+		this.sondages = sondages;
+	}
+
 	public void removeSondage(Sondage sond){
-		if(this.sondages.contains(sond)){
-			this.sondages.remove(sond);
-		}
+		this.sondages.remove(sond);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

@@ -17,6 +17,4 @@ public class ListSondes {
 	public void setListSondes(ArrayList<Sonde> listSondes) {
 		this.listSondes = listSondes;
 	}
-	
-	
 }
